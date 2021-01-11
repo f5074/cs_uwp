@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.UI.Xaml.Controls;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,6 +27,21 @@ namespace cs_uwp
         public MainPage()
         {
             this.InitializeComponent();
+            List<String> list = new List<String>();
+            list.Add("1");
+            list.Add("2");
+            list.Add("3");
+            //treeView1.ItemsSource = list;
+
+            var tabView = new TabView();
+            var itemSource = new List<TabViewItem>
+            {
+                new TabViewItem{ Header = "Tab 1", Content = new TextBlock{ Text = "Hello Tab 1!"} },
+                new TabViewItem{ Header = "Tab 2", Content = new TextBlock{ Text = "Hello Tab 2!"} },
+                new TabViewItem{ Header = "Tab 3", Content = new TextBlock{ Text = "Hello Tab 3!"} },
+            };
+            tabView1.TabItemsSource = itemSource;
+
         }
 
         private async void btnTest_Click(object sender, RoutedEventArgs e)
@@ -45,9 +61,11 @@ namespace cs_uwp
             await messageDialog.ShowAsync();
         }
 
-        private void btnTest2_Click(object sender, RoutedEventArgs e)
-        {
-        }
+        //private async void OnSelectionChanged(object sender, TreeViewItemInvokedEventArgs e)
+        //{
+        //    var messageDialog = new MessageDialog(e.InvokedItem.ToString());
+        //    await messageDialog.ShowAsync();
+        //}
 
         private void CommandInvokedHandler(IUICommand command)
         {

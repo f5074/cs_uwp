@@ -5,20 +5,58 @@
     xmlns:local="using:cs_uwp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
+            <!--<RowDefinition Height="50"></RowDefinition>-->
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <!--<ColumnDefinition Width="200"></ColumnDefinition>-->
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnTest"  Width="100" Height="50" Content="test"  Grid.Row="0" Grid.Column="1" Click="btnTest_Click"/>
-        <Button x:Name="btnTest2"  Width="100" Height="50" Content="test2" Grid.Row="1" Grid.Column="1" Click="btnTest2_Click"/>
+        <Button x:Name="btnTest"  Width="100" Height="50" Content="test"  Grid.Row="0" Grid.Column="0" Click="btnTest_Click"/>
+        <!--<Button x:Name="btnTest2"  Width="100" Height="50" Content="test2" Grid.Row="1" Grid.Column="1"/>-->
+
+        <!--<TreeView x:Name="treeView1"
+              ItemInvoked="{x:Bind OnSelectionChanged, Mode=OneTime}"
+              SelectionMode="Single" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+        </TreeView>-->
+        <muxc:TabView x:Name="tabView1">
+            
+        </muxc:TabView>
+        <!--<muxc:TabView HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1"  Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <muxc:TabViewItem Header="Home" IsClosable="False">
+                <muxc:TabViewItem.IconSource>
+                    <muxc:SymbolIconSource Symbol="Home" />
+                </muxc:TabViewItem.IconSource>
+            </muxc:TabViewItem>
+            <muxc:TabViewItem Header="Document 1">
+                <muxc:TabViewItem.IconSource>
+                    <muxc:SymbolIconSource Symbol="Document" />
+                </muxc:TabViewItem.IconSource>
+            </muxc:TabViewItem>
+            <muxc:TabViewItem Header="Document 2">
+                <muxc:TabViewItem.IconSource>
+                    <muxc:SymbolIconSource Symbol="Document" />
+                </muxc:TabViewItem.IconSource>
+            </muxc:TabViewItem>
+            <muxc:TabViewItem Header="Document 3">
+                <muxc:TabViewItem.IconSource>
+                    <muxc:SymbolIconSource Symbol="Document" />
+                </muxc:TabViewItem.IconSource>
+            </muxc:TabViewItem>
+
+            <muxc:TabView.TabStripHeader>
+                <Grid x:Name="ShellTitlebarInset" Background="Transparent" />
+            </muxc:TabView.TabStripHeader>
+            <muxc:TabView.TabStripFooter>
+                <Grid x:Name="CustomDragRegion" Background="Transparent" />
+            </muxc:TabView.TabStripFooter>
+        </muxc:TabView>-->
     </Grid>
 
 </Page>
